@@ -10,20 +10,15 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate(); 
 
-  // Считываем состояние аутентификации из Redux
+ 
   const { isAuth, role, isLoading, error } = useSelector((state) => state.auth);
 
-  // Используем useEffect для перенаправления после успешного входа
   useEffect(() => {
-    if (isAuth && role === 'ADMIN') { // Проверяем, авторизован ли пользователь и является ли он админом
-      navigate('/admin'); // Перенаправляем на путь /admin
+    if (isAuth && role === 'ADMIN') { 
+      navigate('/admin'); 
     }
-    // Если вы хотите перенаправить и обычного пользователя на другую страницу после входа,
-    // вы можете добавить еще одно условие:
-    // else if (isAuth && role === 'USER') {
-    //   navigate('/user-dashboard'); // Например, на дашборд пользователя
-    // }
-  }, [isAuth, role, navigate]); // Зависимости: хук сработает при изменении этих значений
+    
+  }, [isAuth, role, navigate]); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
