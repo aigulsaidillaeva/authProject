@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react'; 
 import { useNavigate } from 'react-router'; 
 import { loginUser } from '../../store/slices/authThunk';
+import GoogleSignInButton from '../../components/GoogleSignInButton';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -36,6 +37,7 @@ const SignIn = () => {
         </Button> 
         {error && <Typography color="error" mt={2}>{error}</Typography>} 
       </form>
+     <GoogleSignInButton/>
     </Container>
   );
 }
