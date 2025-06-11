@@ -8,7 +8,7 @@ import {store } from './store/store.js'
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
-const GOOGLE_CLIENT_ID ='886984064531-qu314g193865gorf3lgslj6uc7tf1q9d.apps.googleusercontent.com';
+const GOOGLE_CLIENT_ID ='886984064531-bgc4qit8ehvvp1i545c5ojdnfeh6av0k.apps.googleusercontent.com';
 
 
 if (!GOOGLE_CLIENT_ID) {
@@ -17,7 +17,7 @@ if (!GOOGLE_CLIENT_ID) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}  redirectUri="http://localhost:5173/">
       <Provider store={store}> 
         <BrowserRouter>
           <App />
